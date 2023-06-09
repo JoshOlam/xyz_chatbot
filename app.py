@@ -93,7 +93,7 @@ def hide_streamlit_header_footer():
 # Create the vectorizer and classifier
 vectorizer = TfidfVectorizer()
 clf = LogisticRegression(random_state=0, max_iter=10000)
-clf = RandomForestClassifier(random_state=2023, max_depth=3)
+# clf = RandomForestClassifier(random_state=2023, max_depth=3)
 
 # Preprocess the data
 tags = []
