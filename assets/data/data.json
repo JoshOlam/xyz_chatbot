@@ -5,14 +5,14 @@
                 "Hey",
                 "How are you",
                 "What's up"],
-    "responses": ["Hi there",
-                "Hello",
-                "Hey",
-                "I'm fine, thank you",
-                "Nothing much",
-                "Hello! How can I assist you today?",
-                "Hi! How may I help you?",
-                "Hey there! How can I be of service?"]
+    "responses": ["Hi there, welcome to the XYZ chatbot!",
+                "Hello, welcome to the XYZ chatbot!",
+                "Hey, welcome to the XYZ chatbot!",
+                "I'm fine, thank you, and welcome to the XYZ chatbot!",
+                "Welcome to the XYZ chatbot!",
+                "Hello, welcome to the XYZ chatbot! How can I assist you today?",
+                "Hi, welcome to the XYZ chatbot! How may I help you?",
+                "Hey there, welcome to the XYZ chatbot! How can I be of service?"]
 },
 {
     "tag": "goodbye",
