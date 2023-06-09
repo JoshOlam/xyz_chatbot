@@ -134,7 +134,7 @@ def chatbot(input_text):
 counter = 0
 
 def main():
-    # hide_streamlit_header_footer()
+    hide_streamlit_header_footer()
     global counter
     st.title("Chatbot")
     st.write("Welcome to the chatbot. Please type a message and press the `Send` button to start the conversation.")
