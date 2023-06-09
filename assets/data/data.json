@@ -1,0 +1,277 @@
+[{
+    "tag": "greeting",
+    "patterns": ["Hi",
+                "Hello",
+                "Hey",
+                "How are you",
+                "What's up"],
+    "responses": ["Hi there",
+                "Hello",
+                "Hey",
+                "I'm fine, thank you",
+                "Nothing much",
+                "Hello! How can I assist you today?",
+                "Hi! How may I help you?",
+                "Hey there! How can I be of service?"]
+},
+{
+    "tag": "goodbye",
+    "patterns": ["Bye",
+                "See you later",
+                "Goodbye",
+                "Take care",
+                "Goodbyeeeeee",
+                "See you later",
+                "Take care"],
+    "responses": ["Goodbye",
+                "See you later",
+                "Take care",
+                "Goodbye! Have a great day!",
+                "See you later! Take care.",
+                "Take care! Have a wonderful day!"]
+},
+{
+    "tag": "thanks",
+    "patterns": ["Thank you",
+                "Thanks",
+                "Thanks a lot",
+                "I appreciate it"],
+    "responses": ["You're welcome",
+                "No problem",
+                "Glad I could help"]
+},
+{
+    "tag": "about",
+    "patterns": ["What can you do",
+                "Who are you",
+                "What are you",
+                "What is your purpose"],
+    "responses": ["I am a chatbot for XYZ",
+                "My purpose is to assist you on enquiries about XYZ",
+                "I can answer questions and provide assistance about XYZ."]
+},
+{
+    "tag": "help",
+    "patterns": ["Help",
+                "I need help",
+                "Can you help me",
+                "What should I do"],
+    "responses": ["Sure, what do you need help with?",
+                "I'm here to help. What's the problem?",
+                "How can I assist you?"]
+},
+{
+    "tag": "age",
+    "patterns": ["How old are you",
+                "What's your age"],
+    "responses": ["I don't have an age. I'm a chatbot.",
+                "I was just born in the digital world.",
+                "Age is just a number for me."]
+},
+{
+    "tag": "weather",
+    "patterns": ["What's the weather like",
+                "How's the weather today"],
+    "responses": ["I'm sorry, I cannot provide real-time weather information.",
+                "You can check the weather on a weather app or website."]
+},
+{
+    "tag": "budget",
+    "patterns": ["How can I make a budget",
+                "What's a good budgeting strategy",
+                "How do I create a budget"],
+    "responses": ["To make a budget, start by tracking your income and expenses. Then, allocate your income towards essential expenses like rent, food, and bills. Next, allocate some of your income towards savings and debt repayment. Finally, allocate the remainder of your income towards discretionary expenses like entertainment and hobbies.",
+                "A good budgeting strategy is to use the 50/30/20 rule. This means allocating 50% of your income towards essential expenses, 30% towards discretionary expenses, and 20% towards savings and debt repayment.",
+                "To create a budget, start by setting financial goals for yourself. Then, track your income and expenses for a few months to get a sense of where your money is going. Next, create a budget by allocating your income towards essential expenses, savings and debt repayment, and discretionary expenses."]
+},
+{
+    "tag": "crash",
+    "patterns": ["I recently updated my operating system, and ever since then, XYZ mobile application on my phone keeps crashing and quitting",
+                "This app keeps crashing", "my app crashed", "Your app is crashing"],
+    "responses": ["Have you tried restarting your phone, please? Let me know if that helps.",
+                "Please, restart your phone and let me know it it solves the crashing issue."]
+},
+{
+    "tag": "damaged",
+    "patterns": ["Today, I received a damaged product, how do I go about returning it",
+                "This product is damaged", "I received a product but it is not working"],
+    "responses": ["I am sorry for your damaged product. Kindly visit `www.xyz.com/return_policy` to have a look at our return policy."]
+},
+{
+    "tag": "credit_score",
+    "patterns": ["What is a credit score", "How do I check my credit score",
+                "How can I improve my credit score"],
+    "responses": ["A credit score is a number that represents your creditworthiness. It is based on your credit history and is used by lenders to determine whether or not to lend you money. The higher your credit score, the more likely you are to be approved for credit.",
+                "You can check your credit score for free on several websites such as Credit Karma and Credit Sesame."]
+},
+{
+      "tag": "company_info",
+      "patterns": [
+        "Tell me about XYZ",
+        "What does XYZ do?",
+        "Can you provide information about XYZ?"
+      ],
+      "responses": [
+        "XYZ is a leading company in the industry, specializing in e-commerce",
+        "XYZ is known for its expertise in e-commerce",
+        "XYZ offers a wide range of products/services, including e-commerce"
+      ]
+},
+{
+      "tag": "website_info",
+      "patterns": [
+        "What is the website of XYZ?",
+        "Can you provide me with the XYZ website address?",
+        "Where can I find more information about XYZ?"
+      ],
+      "responses": [
+        "The website for XYZ is xyz.com",
+        "You can visit xyz.com for more information",
+        "To learn more about XYZ, please visit xyz.com"
+      ]
+},
+{
+      "tag": "product_info",
+      "patterns": [
+        "What products does XYZ offer?",
+        "Tell me about your product line",
+        "Can you provide information about your offerings?"
+      ],
+      "responses": [
+        "XYZ offers a diverse range of products, including buying and selling of commodities etc",
+        "Our product line includes buying and selling of commodities",
+        "We have a variety of offerings, such as buying and selling of commodities"
+      ]
+    },
+    {
+      "tag": "pricing",
+      "patterns": [
+        "How much does XYZ's product cost?",
+        "What are the pricing options for your products?",
+        "Can you give me an idea of the prices?"
+      ],
+      "responses": [
+        "The pricing for XYZ's products varies based on the specific product and its features. It's best to visit our website (`www.xyz.com`) or contact our sales team for detailed pricing information.",
+        "We have different pricing options available for our products. To get accurate pricing details, I recommend reaching out to our sales team or visiting our website (`www.xyz.com`).",
+        "The cost of XYZ's products depends on factors like the product type and any additional services required. For specific pricing information, please contact our sales team (sales@xyz.com) or visit our website (`www.xyz.com`)."
+      ]
+    },
+    {
+      "tag": "support",
+      "patterns": [
+        "How can I get support from XYZ?",
+        "What support options do you provide?",
+        "Is there a help desk I can contact?"
+      ],
+      "responses": [
+        "XYZ offers various support options, including a dedicated help desk. You can reach our support team by visiting our website and accessing the support section.",
+        "We provide multiple support channels for our customers, such as email support, live chat, and a help desk. You can find detailed information on how to contact our support team on our website.",
+        "For support, you can contact our help desk by visiting our website or sending an email to [email protected] Our team will be happy to assist you."
+      ]
+    },
+    {
+      "tag": "partnership",
+      "patterns": [
+        "Does XYZ offer partnership opportunities?",
+        "How can I become a partner of XYZ?",
+        "Tell me about your partnership program."
+      ],
+      "responses": [
+        "XYZ has a partnership program that allows businesses to collaborate with us. To learn more about partnership opportunities, please visit our website or contact our partnership team at [email protected]",
+        "We actively seek partnerships with organizations that align with our goals. If you're interested in becoming a partner of XYZ, please reach out to our partnership team through our website or send an email to [email protected]",
+        "We value partnerships and offer collaboration opportunities. If you'd like to explore a partnership with XYZ, please get in touch with our partnership team via our website or by emailing [email protected]"
+      ]
+},
+{
+      "tag": "app_crash",
+      "patterns": [
+        "I recently updated my operating system, and ever since then, XYZ mobile application on my phone keeps crashing and quitting",
+        "After updating my OS, the XYZ mobile app keeps crashing",
+        "The XYZ mobile app on my phone crashes since the OS update"
+      ],
+      "responses": [
+        "I'm sorry to hear that. One solution you can try is to restart your phone and see if it resolves the issue.",
+        "It's unfortunate that you're experiencing this problem. Have you tried restarting your phone? Sometimes, that can help with app crashes.",
+        "I apologize for the inconvenience. Please try restarting your phone and check if the app still crashes. Let me know if the issue persists."
+      ]
+    },
+    {
+      "tag": "app_crash_unresolved",
+      "patterns": [
+        "I restarted my phone, but the XYZ mobile app still crashes",
+        "Restarted my phone, but the app keeps crashing",
+        "I've already tried restarting my phone, but the app continues to crash"
+      ],
+      "responses": [
+        "I'm sorry to hear that restarting didn't help. In that case, I recommend reaching out to our support team. They can assist you further. Please provide your contact details, and they will get in touch with you.",
+        "I apologize for the inconvenience. Since the issue persists even after restarting, I recommend contacting our support team. They will be able to investigate the problem in more detail. Please provide your contact information so they can reach out to you.",
+        "I understand your frustration. Despite restarting, if the app still crashes, it's best to contact our support team. They will be able to troubleshoot the issue for you. Please share your contact details, and they will assist you."
+      ]
+    },
+    {
+      "tag": "return_product",
+      "patterns": [
+        "Today, I received a damaged product, how do I go about returning it",
+        "The product I received is damaged. What is the return process?",
+        "I need to return a damaged item. How can I proceed?"
+      ],
+      "responses": [
+        "I apologize for the inconvenience caused by the damaged product. To initiate a return, please visit our website and refer to our return policy for detailed instructions. You can find the return policy at xyz.com/return_policy.",
+        "I'm sorry to hear that you received a damaged product. To proceed with the return, please check our return policy on our website at xyz.com/return_policy. It provides step-by-step instructions on returning damaged items.",
+        "I'm sorry for the inconvenience. For returning a damaged item, please visit xyz.com/return_policy. Our return policy page will guide you through the process and provide all the necessary information."
+      ]
+    },
+    {
+      "tag": "delivery_delay",
+      "patterns": [
+        "My item is taking too long to be delivered",
+        "Why is my order taking so long to arrive?",
+        "The delivery of my item is delayed. Can you help?"
+      ],
+      "responses": [
+        "I apologize for the delay in delivering your goods. To assist you further, could you please provide your order number? This will help us investigate the status of your delivery.",
+        "I'm sorry to hear that your order is delayed. To assist you, I kindly request your order number. With that information, we can look into the status of your delivery and provide you with an update.",
+        "I understand your frustration regarding the delayed delivery. To help resolve this issue, could you please provide your order number? Once we have that, we can investigate the matter and provide you with more information."
+      ]
+    },
+    {
+      "tag": "company_info",
+      "patterns": [
+        "Tell me about XYZ",
+        "What is XYZ?",
+        "Can you provide some information about XYZ?"
+      ],
+      "responses": [
+        "XYZ is a reputable company specializing in e-commerce",
+        "As a leading organization, XYZ is known for e-commerce",
+        "XYZ is committed to providing top-notch products and services in e-commerce"
+      ]
+    },
+    {
+      "tag": "speak_to_agent",
+      "patterns": [
+        "I want to speak to a staff",
+        "Can I chat with a customer service representative?",
+        "How can I talk to an agent?"
+      ],
+      "responses": [
+        "Sure! You can reach our customer service team at the following phone numbers: +234 232-232-2323 and +01 323-232-3232. They will be glad to assist you.",
+        "Of course! Our customer service representatives are available to assist you. Please feel free to call us at +234 232-232-2323 or +01 323-232-3232.",
+        "Certainly! If you wish to speak to an agent, you can contact our customer service team at +234 232-232-2323 or +234 323-232-3232. They will be happy to help."
+      ]
+    },
+    {
+      "tag": "complaint",
+      "patterns": [
+        "I have a complaint",
+        "I have an issue",
+        "There's an issue I need to address",
+        "I would like to file a complaint"
+      ],
+      "responses": [
+        "I'm sorry to hear that. What is your complaint about? Please provide a brief description, and I will escalate the matter to the relevant team. In the meantime, here are two phone numbers you can reach out to for immediate assistance: +234 232-232-2323 and +234 323-232-3232.",
+        "I apologize for any inconvenience caused. Could you please provide more details about your complaint? This will help us better understand the issue and assist you accordingly. In the meantime, here are two phone numbers you can call for further assistance: +234 232-232-2323 and +234 323-232-3232.",
+        "I'm sorry that you're facing an issue. To help resolve the matter, please provide additional information about your complaint. We will ensure it reaches the appropriate department. Additionally, here are two phone numbers you can contact for immediate support: +234 232-232-2323 and +234 323-232-3232."
+      ]
+    }
+]
