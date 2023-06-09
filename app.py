@@ -142,7 +142,7 @@ def main():
     counter += 1
     user_input = st.text_input("You:", key=f"user_input_{counter}")
 
-    if st.button("`Send`", help="Click here to send"):
+    if st.button("`Send`", help="Click here to send") or user_input:
             
         if user_input:
             if st.button(":red[Clear chat]"):
