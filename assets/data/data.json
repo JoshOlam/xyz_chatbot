@@ -109,7 +109,11 @@
       "patterns": [
         "Tell me about XYZ",
         "What does XYZ do?",
-        "Can you provide information about XYZ?"
+        "Can you provide information about XYZ?",
+        "how can i contact your company?",
+        "Tell me about your company",
+        "What does your company do?",
+        "Can you provide me information about your company?"
       ],
       "responses": [
         "XYZ is a leading company in the industry, specializing in e-commerce",
