@@ -44,9 +44,9 @@ st.set_page_config(
     }
 )
 
-# Load the JSON data
-with open('Ecommerce_FAQ_Chatbot_dataset.json') as file:
-    data = json.load(file)
+# # Load the JSON data
+# with open('Ecommerce_FAQ_Chatbot_dataset.json') as file:
+#     data = json.load(file)
 
 DATA_PATH = "assets/data/data.json"
 with open(DATA_PATH, "r") as  data:
