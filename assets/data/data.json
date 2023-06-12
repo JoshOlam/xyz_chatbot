@@ -88,19 +88,23 @@
 {
     "tag": "crash",
     "patterns": ["I recently updated my operating system, and ever since then, XYZ mobile application on my phone keeps crashing and quitting",
-                "This app keeps crashing", "my app crashed", "Your app is crashing"],
+                "This app keeps crashing",
+                "my app crashed",
+                "Your app is crashing"],
     "responses": ["Have you tried restarting your phone, please? Let me know if that helps.",
                 "Please, restart your phone and let me know it it solves the crashing issue."]
 },
 {
     "tag": "damaged",
     "patterns": ["Today, I received a damaged product, how do I go about returning it",
-                "This product is damaged", "I received a product but it is not working"],
+                "This product is damaged",
+                "I received a product but it is not working"],
     "responses": ["I am sorry for your damaged product. Kindly visit `www.xyz.com/return_policy` to have a look at our return policy."]
 },
 {
     "tag": "credit_score",
-    "patterns": ["What is a credit score", "How do I check my credit score",
+    "patterns": ["What is a credit score",
+                "How do I check my credit score",
                 "How can I improve my credit score"],
     "responses": ["A credit score is a number that represents your creditworthiness. It is based on your credit history and is used by lenders to determine whether or not to lend you money. The higher your credit score, the more likely you are to be approved for credit.",
                 "You can check your credit score for free on several websites such as Credit Karma and Credit Sesame."]
@@ -171,7 +175,7 @@
       "responses": [
         "XYZ offers various support options, including a dedicated help desk. You can reach our support team by visiting our website and accessing the support section.",
         "We provide multiple support channels for our customers, such as email support, live chat, and a help desk. You can find detailed information on how to contact our support team on our website.",
-        "For support, you can contact our help desk by visiting our website or sending an email to [email protected] Our team will be happy to assist you."
+        "For support, you can contact our help desk by visiting our website or sending an email to `support@xyz.com` Our team will be happy to assist you."
       ]
     },
     {
@@ -182,9 +186,9 @@
         "Tell me about your partnership program."
       ],
       "responses": [
-        "XYZ has a partnership program that allows businesses to collaborate with us. To learn more about partnership opportunities, please visit our website or contact our partnership team at [email protected]",
-        "We actively seek partnerships with organizations that align with our goals. If you're interested in becoming a partner of XYZ, please reach out to our partnership team through our website or send an email to [email protected]",
-        "We value partnerships and offer collaboration opportunities. If you'd like to explore a partnership with XYZ, please get in touch with our partnership team via our website or by emailing [email protected]"
+        "XYZ has a partnership program that allows businesses to collaborate with us. To learn more about partnership opportunities, please visit our website or contact our partnership team at `partnership@xyz.com`",
+        "We actively seek partnerships with organizations that align with our goals. If you're interested in becoming a partner of XYZ, please reach out to our partnership team through our website or send an email to `partnership@xyz.com`",
+        "We value partnerships and offer collaboration opportunities. If you'd like to explore a partnership with XYZ, please get in touch with our partnership team via our website or by emailing `partnership@xyz.com`"
       ]
 },
 {

@@ -4,12 +4,12 @@ import ssl
 import streamlit as st
 from streamlit_chat import message
 import random
+from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 import json
 from sklearn.metrics.pairwise import cosine_similarity
-
 
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
@@ -51,6 +51,15 @@ st.set_page_config(
 DATA_PATH = "assets/data/data.json"
 with open(DATA_PATH, "r") as  data:
     intents = json.load(data)
+
+def convert_session_state_to_dict(session_state):
+    state_dict = {}
+    for key, value in session_state.items():
+        state_dict[key] = value
+    return state_dict
+
+CHAT_HISTORY_PATH = "outputs/chat_histories"
+EMAIL_PATH = "outputs/emails/"
 
 # Hide streamlit header and footer
 def hide_streamlit_header_footer():
@@ -129,56 +138,123 @@ def chatbot(input_text):
     for intent in intents:
         if intent['tag'] == tag:
             response = random.choice(intent['responses'])
-            return response
+            if intent["tag"] == "goodbye":
+                return [response, tag, "goodbye"]
+            return [response, tag]
+
+# ------------------------------------------------------------------
+# Save history
+
+# This is used to save chat history and display on the screen
+if 'tag' not in st.session_state:
+    st.session_state["tag"] = []
+
+if "answer" not in st.session_state:
+    st.session_state["answer"] = []
+
+if "question" not in st.session_state:
+    st.session_state["question"] = []
 
 counter = 0
 
 def main():
-    hide_streamlit_header_footer()
+    # hide_streamlit_header_footer()
     global counter
     st.title("Chatbot")
-    st.write("Welcome to the chatbot. Please type a message and press the `Send` button to start the conversation.")
+    st.write("Welcome to the chatbot. Please type a message and click the `Send` button to start the conversation.")
     # st.write(intents)
     counter += 1
+    
+    # Generate a timestamp for the current file
+    timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    
     user_input = st.text_input("You:", key=f"user_input_{counter}")
 
     if st.button("`Send`", help="Click here to send") or user_input:
             
         if user_input:
-            if st.button(":red[Clear chat]"):
-                st.experimental_rerun()
-                # st.session_state.clear()
-                # pass
+            # Get the predicted response for the user
             response = chatbot(user_input)
-            # st.text_ area("Chatbot:", value=response, height=100, max_chars=None, key=f"chatbot_response_{counter}")
 
-            if response.lower() in ['goodbye', 'bye']:
-                st.write("Thank you for chatting with me. Have a great day!")
-                st.stop()
-        
-
-            # ------------------------------------------------------------------
-            # Save history
-
-            # This is used to save chat history and display on the screen
-            if "answer" not in st.session_state:
-                st.session_state["answer"] = []
-
-            if "question" not in st.session_state:
-                st.session_state["question"] = []
+            # Get the predicted tag of the question
+            tag = response[1]
 
             # ------------------------------------------------------------------
             # Display the current response. Chat history is displayed below
             
-            # Add the question and the answer to display chat history in a list
+            # Add the predicted tag, question and answer to display chat history in a list
             # Latest answer appears at the top
+            st.session_state.tag.insert(0, tag)
             st.session_state.question.insert(0, user_input)
-            st.session_state.answer.insert(0, response)
+            st.session_state.answer.insert(0, response[0])
             # message
-            # Display the chat history
+            
+            # st.write(response[0])
+            if "goodbye" in response:
+                st.write(response[0])
+                # st.session_state.answer.insert(0, response[0])
+                # st.write(st.session_state)
+                # Retrieve the data from streamlit.session_state
+                chat_history = convert_session_state_to_dict(st.session_state)
+                
+                if st.checkbox(":green[Click here to either create an account or sign-up to our mailing list]"):
+
+                    end_of_discussion_question = st.radio("Select an option", ("Create Account", "Mailing list"))
+                    if end_of_discussion_question == "Create Account":
+                        st.write("Kindly visit `www.xyz.com/reg` to create an account.")
+                        st.write("Thank you for chatting with me. Have a great day!")
+                    elif end_of_discussion_question == "Mailing list":
+                        user_email = st.text_input("Kindly enter your email address here")
+                        if st.button("Enter") or user_email:
+                            path = f"{EMAIL_PATH}mail-{timestamp}.txt"
+                            # Create the target directory if it doesn't exist
+                            if not os.path.isdir(EMAIL_PATH):
+                                os.makedirs(EMAIL_PATH)
+                            with open(path, "w") as mail:
+                                mail.write(user_email)
+                            st.success(f"Thank you for your response! I have saved your email (`{user_email}`) and will forward to the mailing team", icon="✅")
+                            st.write("Thank you for chatting with me. Have a great day!")
+                    else:
+                        pass
+                
+                # clear the chat and save it as a json file before stopping
+                    
+                # Clear the conversation's history
+                st.session_state.clear()
+
+                # Create the target directory if it doesn't exist
+                if not os.path.isdir(CHAT_HISTORY_PATH):
+                    os.makedirs(CHAT_HISTORY_PATH)
+                
+                # Save the conversation history to file
+                path = os.path.join(CHAT_HISTORY_PATH, f"chat_history-{timestamp}.json")
+                with open(path, "w") as chat_file:
+                    # chat_file.write(json.dump(chat_history, indent=4))
+                    json.dump(chat_history, chat_file, indent=4)
+
+                st.stop()
+                
+
+            if st.button(":red[Clear chat]"):
+                clear_chat = st.selectbox("Are you sure you want to clear your chat history?", ("No", "Yes"))
+                if clear_chat == "Yes":
+                    st.write("Yes")
+                    st.session_state.clear()
+                    
+                    st.success("Chat history cleared!", icon="🚨")
+                    # st.stop()
+                    # st.experimental_rerun()
+                else:
+                    pass
+                    # st.stop()
+            
+            # Display the chat history, answer stays above
             for i in range(len(st.session_state.question)):
                 message(st.session_state["answer"][i], is_user=False, key=f"answer_{i}")
                 message(st.session_state["question"][i], is_user=True, key=f"question_{i}")
+            # st.text_ area("Chatbot:", value=response, height=100, max_chars=None, key=f"chatbot_response_{counter}")
+            
+
         else:
             st.warning("Kindly enter your message", icon="⚠️")
 
