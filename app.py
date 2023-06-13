@@ -186,6 +186,28 @@ def main():
     
     # Generate a timestamp for the current file
     timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
+    def end_of_discussion():
+        if st.checkbox(":green[Click here to either create an account or sign-up to our mailing list]"):
+            end_of_discussion_question = st.radio("Select an option", ("Create Account", "Mailing list"))
+            if end_of_discussion_question == "Create Account":
+                st.write("Kindly visit `www.xyz.com/reg` to create an account.")
+                st.write("Thank you for chatting with me. Have a great day!")
+            elif end_of_discussion_question == "Mailing list":
+                user_email = st.text_input("Kindly enter your email address here")
+                if st.button("Enter") or user_email:
+                    path = f"{EMAIL_PATH}mail-{timestamp}.txt"
+                    
+                    # Create the target directory if it doesn't exist
+                    if not os.path.isdir(EMAIL_PATH):
+                        os.makedirs(EMAIL_PATH)
+                    with open(path, "w") as mail:
+                        mail.write(user_email)
+                    st.success(f"Thank you for your response! I have saved your email (`{user_email}`) and will forward to the mailing team", icon="✅")
+                    st.write("Thank you for chatting with me. Have a great day!")
+            else:
+                pass
+
     dummy_text = ""
     user_input = st.text_input("You:",value=dummy_text, key=f"user_input_{counter}")
 
@@ -211,7 +233,7 @@ def main():
             if tag == "delivery_delay":
                 order_dict = {}
                 order_num = st.text_input("Kindly input your order number here")
-                if st.button("Enter") or order_num:
+                if st.button("Submit") or order_num:
                     order_dict["question"] = user_input
                     order_dict["order_num"] = order_num
                     path = f"{ORDER_NUMBER_PATH}order_num-{timestamp}.json"
@@ -221,6 +243,7 @@ def main():
                     with open(path, "w") as order:
                         json.dump(order_dict, order)
                     st.success(f"Thank you for your response! Your order number (`{order_num}`) has been saved and the team will be with you shortly", icon="✅")
+                    end_of_discussion()
                     if st.checkbox("Continue chatting"):
                         st.session_state.clear()
                         st.experimental_rerun()
@@ -231,6 +254,7 @@ def main():
                 complaint = st.text_input("Type your complaint here:")
                 if st.button("Submit") or complaint:
                     st.success("Thank you for your response! I have noted your complaint and also forwarded it to the appropriate team.", icon="🤖")
+                    end_of_discussion()
                     if st.checkbox("Continue chatting"):
                         st.session_state.clear()
                         st.experimental_rerun()
@@ -241,31 +265,13 @@ def main():
             
             # st.write(response[0])
             if "goodbye" in response:
-                st.write(response[0])
+                # st.write(response[0])
                 # st.session_state.answer.insert(0, response[0])
                 # st.write(st.session_state)
                 # Retrieve the data from streamlit.session_state
                 chat_history = convert_session_state_to_dict(st.session_state)
                 
-                if st.checkbox(":green[Click here to either create an account or sign-up to our mailing list]"):
-
-                    end_of_discussion_question = st.radio("Select an option", ("Create Account", "Mailing list"))
-                    if end_of_discussion_question == "Create Account":
-                        st.write("Kindly visit `www.xyz.com/reg` to create an account.")
-                        st.write("Thank you for chatting with me. Have a great day!")
-                    elif end_of_discussion_question == "Mailing list":
-                        user_email = st.text_input("Kindly enter your email address here")
-                        if st.button("Enter") or user_email:
-                            path = f"{EMAIL_PATH}mail-{timestamp}.txt"
-                            # Create the target directory if it doesn't exist
-                            if not os.path.isdir(EMAIL_PATH):
-                                os.makedirs(EMAIL_PATH)
-                            with open(path, "w") as mail:
-                                mail.write(user_email)
-                            st.success(f"Thank you for your response! I have saved your email (`{user_email}`) and will forward to the mailing team", icon="✅")
-                            st.write("Thank you for chatting with me. Have a great day!")
-                    else:
-                        pass
+                
                 
                 # clear the chat and save it as a json file before stopping
                     
