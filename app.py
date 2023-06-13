@@ -45,11 +45,6 @@ st.set_page_config(
     }
 )
 
-
-# # Load the JSON data
-# with open('Ecommerce_FAQ_Chatbot_dataset.json') as file:
-#     data = json.load(file)
-
 DATA_PATH = "assets/data/data.json"
 with open(DATA_PATH, "r") as  data:
     intents = json.load(data)
@@ -95,26 +90,26 @@ col1, col2 = st.columns(2)
 # with col2:
 #     st.write(answers)
 
-# Create a TF-IDF vectorizer
-vectorizer_cosine = TfidfVectorizer()
+# # Create a TF-IDF vectorizer
+# vectorizer_cosine = TfidfVectorizer()
 
-# Transform the questions into a TF-IDF matrix
-tfidf_matrix = vectorizer_cosine.fit_transform(questions)
+# # Transform the questions into a TF-IDF matrix
+# tfidf_matrix = vectorizer_cosine.fit_transform(questions)
 
-# Define a function to find the best matching response
-def get_best_response(user_input):
-    # Transform the user input into a TF-IDF vector
-    user_input_tfidf = vectorizer_cosine.transform([user_input])
+# # Define a function to find the best matching response
+# def get_best_response(user_input):
+#     # Transform the user input into a TF-IDF vector
+#     user_input_tfidf = vectorizer_cosine.transform([user_input])
 
-    # Calculate the cosine similarity between the user input and the questions
-    similarities = cosine_similarity(user_input_tfidf, tfidf_matrix)
+#     # Calculate the cosine similarity between the user input and the questions
+#     similarities = cosine_similarity(user_input_tfidf, tfidf_matrix)
 
-    # Get the index of the most similar question
-    best_question_index = similarities.argmax()
+#     # Get the index of the most similar question
+#     best_question_index = similarities.argmax()
 
-    # Return the corresponding answer
-    st.write(answers[best_question_index])
-    return answers[best_question_index]
+#     # Return the corresponding answer
+#     st.write(answers[best_question_index])
+#     return answers[best_question_index]
 
 
 
@@ -135,21 +130,7 @@ for intent in intents:
 x = vectorizer.fit_transform(patterns)
 y = tags
 clf.fit(x, y)
-# col1, col2 = st.columns(2)
 
-# with col1:
-#     st.write(tags)
-#     # st.header("A cat")
-#     # st.image("https://static.streamlit.io/examples/cat.jpg")
-
-# with col2:
-#     st.write(patterns)
-#     # st.header("A dog")
-#     # st.image("https://static.streamlit.io/examples/dog.jpg")
-
-# with col3:
-#     st.header("An owl")
-#     st.image("https://static.streamlit.io/examples/owl.jpg")
 @st.cache_data()
 def chatbot(input_text):
     input_text = vectorizer.transform([input_text])
@@ -186,6 +167,13 @@ def main():
     
     # Generate a timestamp for the current file
     timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+
+    def clear_chat_history():
+        # Add a clear chat button for clearing the chat history
+        if st.button(":red[Clear chat]"):
+            st.session_state.clear()
+            st.success("Chat history cleared!", icon="🚨")
+            st.stop()
 
     def end_of_discussion():
         if st.checkbox(":green[Click here to either create an account or sign-up to our mailing list]"):
@@ -249,6 +237,7 @@ def main():
                         st.experimental_rerun()
                         st.stop()
                     else:
+                        clear_chat_history()
                         st.stop()
             
             # If the tag of the question is predicted as complaint
