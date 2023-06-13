@@ -89,9 +89,6 @@ def configure_theme():
     """
     st.markdown(dark_theme, unsafe_allow_html=True)
 
-configure_theme()
-
-
 # # Extract questions and answers from the JSON data
 # questions = [item['question'] for item in data['questions']]
 # answers = [item['answer'] for item in data['questions']]
@@ -180,6 +177,7 @@ counter = 0
 
 def main():
     # hide_streamlit_header_footer()
+    configure_theme()
     global counter
     st.title("Chatbot")
     st.write("Welcome to the chatbot. Please type a message and click the `Send` button to start the conversation.")
