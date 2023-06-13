@@ -33,6 +33,7 @@ any bug using the `Report a bug` button, or use the
 `Get Help` button to get assistance from our technical team.
 """
 
+
 st.set_page_config(
     page_icon = PAGE_ICON,
     page_title = PAGE_TITLE,
@@ -43,6 +44,7 @@ st.set_page_config(
         'About': ABOUT
     }
 )
+
 
 # # Load the JSON data
 # with open('Ecommerce_FAQ_Chatbot_dataset.json') as file:
@@ -60,6 +62,7 @@ def convert_session_state_to_dict(session_state):
 
 CHAT_HISTORY_PATH = "outputs/chat_histories"
 EMAIL_PATH = "outputs/emails/"
+ORDER_NUMBER_PATH = "outputs/order_numbers/"
 
 # Hide streamlit header and footer
 def hide_streamlit_header_footer():
@@ -188,6 +191,21 @@ def main():
             st.session_state.question.insert(0, user_input)
             st.session_state.answer.insert(0, response[0])
             # message
+
+            if tag == "delivery_delay":
+                order_dict = {}
+                order_num = st.text_input("Kindly input your order number here")
+                if st.button("Enter") or order_num:
+                    order_dict["question"] = user_input
+                    order_dict["order_num"] = order_num
+                    path = f"{ORDER_NUMBER_PATH}order_num-{timestamp}.json"
+                    # Create the target directory if it doesn't exist
+                    if not os.path.isdir(ORDER_NUMBER_PATH):
+                        os.makedirs(ORDER_NUMBER_PATH)
+                    with open(path, "w") as order:
+                        json.dump(order_dict, order)
+                    st.success(f"Thank you for your response! Your order number (`{order_num}`) has been saved and the team will be with you shortly", icon="✅")
+
             
             # st.write(response[0])
             if "goodbye" in response:
