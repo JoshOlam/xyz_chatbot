@@ -80,25 +80,41 @@ def hide_streamlit_header_footer():
 # questions = [item['question'] for item in data['questions']]
 # answers = [item['answer'] for item in data['questions']]
 
-# # Create a TF-IDF vectorizer
-# vectorizer = TfidfVectorizer()
+questions = []
+answers = []
 
-# # Transform the questions into a TF-IDF matrix
-# tfidf_matrix = vectorizer.fit_transform(questions)
+for entry in intents:
+    for question in entry["patterns"]:
+        questions.append(question)
+    for answer in entry["responses"]:
+        answers.append(answer)
+col1, col2 = st.columns(2)
 
-# # Define a function to find the best matching response
-# def get_best_response(user_input):
-#     # Transform the user input into a TF-IDF vector
-#     user_input_tfidf = vectorizer.transform([user_input])
+# with col1:
+#     st.write(questions)
+# with col2:
+#     st.write(answers)
 
-#     # Calculate the cosine similarity between the user input and the questions
-#     similarities = cosine_similarity(user_input_tfidf, tfidf_matrix)
+# Create a TF-IDF vectorizer
+vectorizer_cosine = TfidfVectorizer()
 
-#     # Get the index of the most similar question
-#     best_question_index = similarities.argmax()
+# Transform the questions into a TF-IDF matrix
+tfidf_matrix = vectorizer_cosine.fit_transform(questions)
 
-#     # Return the corresponding answer
-#     return answers[best_question_index]
+# Define a function to find the best matching response
+def get_best_response(user_input):
+    # Transform the user input into a TF-IDF vector
+    user_input_tfidf = vectorizer_cosine.transform([user_input])
+
+    # Calculate the cosine similarity between the user input and the questions
+    similarities = cosine_similarity(user_input_tfidf, tfidf_matrix)
+
+    # Get the index of the most similar question
+    best_question_index = similarities.argmax()
+
+    # Return the corresponding answer
+    st.write(answers[best_question_index])
+    return answers[best_question_index]
 
 
 
@@ -134,7 +150,7 @@ clf.fit(x, y)
 # with col3:
 #     st.header("An owl")
 #     st.image("https://static.streamlit.io/examples/owl.jpg")
-
+@st.cache_data()
 def chatbot(input_text):
     input_text = vectorizer.transform([input_text])
     tag = clf.predict(input_text)[0]
@@ -170,12 +186,12 @@ def main():
     
     # Generate a timestamp for the current file
     timestamp = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    
-    user_input = st.text_input("You:", key=f"user_input_{counter}")
+    dummy_text = ""
+    user_input = st.text_input("You:",value=dummy_text, key=f"user_input_{counter}")
 
     if st.button("`Send`", help="Click here to send") or user_input:
-            
         if user_input:
+            # get_best_response(user_input)
             # Get the predicted response for the user
             response = chatbot(user_input)
 
@@ -205,6 +221,22 @@ def main():
                     with open(path, "w") as order:
                         json.dump(order_dict, order)
                     st.success(f"Thank you for your response! Your order number (`{order_num}`) has been saved and the team will be with you shortly", icon="✅")
+                    if st.checkbox("Continue chatting"):
+                        st.session_state.clear()
+                        st.experimental_rerun()
+                        st.stop()
+                    else:
+                        st.stop()
+            if tag == "complaint":
+                complaint = st.text_input("Type your complaint here:")
+                if st.button("Submit") or complaint:
+                    st.success("Thank you for your response! I have noted your complaint and also forwarded it to the appropriate team.", icon="🤖")
+                    if st.checkbox("Continue chatting"):
+                        st.session_state.clear()
+                        st.experimental_rerun()
+                        st.stop()
+                    else:
+                        st.stop()
 
             
             # st.write(response[0])

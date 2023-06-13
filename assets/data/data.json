@@ -244,7 +244,13 @@
       "tag": "speak_to_agent",
       "patterns": [
         "I want to speak to a staff",
+        "Can I chat with a staff?",
+        "How can I talk to a staff?",
+        "I want to speak to a customer service representative",
         "Can I chat with a customer service representative?",
+        "How can I talk to a customer service representative?",
+        "I want to speak to an agent",
+        "Can I chat with an agent?",
         "How can I talk to an agent?"
       ],
       "responses": [
