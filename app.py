@@ -1,19 +1,19 @@
 import os
+import json
+import random
+from datetime import datetime
 import nltk
 import ssl
 import streamlit as st
 from streamlit_chat import message
-import random
-from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-import json
 from sklearn.metrics.pairwise import cosine_similarity
 
 ssl._create_default_https_context = ssl._create_unverified_context
-nltk.data.path.append(os.path.abspath("nltk_data"))
-nltk.download('punkt')
+# nltk.data.path.append(os.path.abspath("nltk_data"))
+# nltk.download('punkt')
 
 
 # ---- PAGE CONFIGURATION ---- #
@@ -46,8 +46,14 @@ st.set_page_config(
 )
 
 DATA_PATH = "assets/data/data.json"
-with open(DATA_PATH, "r") as  data:
-    intents = json.load(data)
+
+@st.cache_resource
+def load_data(data_path = DATA_PATH):    
+    with open(data_path, "r") as  data:
+        intents = json.load(data)
+    return intents
+
+intents = load_data()
 
 def convert_session_state_to_dict(session_state):
     state_dict = {}
@@ -71,19 +77,34 @@ def hide_streamlit_header_footer():
             """
     st.markdown(hide_st_style, unsafe_allow_html=True)
 
+# Configure Streamlit theme
+def configure_theme():
+    dark_theme = """
+    <style>
+    .reportview-container {
+        background: #171717;
+        color: white;
+    }
+    </style>
+    """
+    st.markdown(dark_theme, unsafe_allow_html=True)
+
+configure_theme()
+
+
 # # Extract questions and answers from the JSON data
 # questions = [item['question'] for item in data['questions']]
 # answers = [item['answer'] for item in data['questions']]
 
-questions = []
-answers = []
+# questions = []
+# answers = []
 
-for entry in intents:
-    for question in entry["patterns"]:
-        questions.append(question)
-    for answer in entry["responses"]:
-        answers.append(answer)
-col1, col2 = st.columns(2)
+# for entry in intents:
+#     for question in entry["patterns"]:
+#         questions.append(question)
+#     for answer in entry["responses"]:
+#         answers.append(answer)
+# col1, col2 = st.columns(2)
 
 # with col1:
 #     st.write(questions)
