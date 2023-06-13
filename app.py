@@ -236,23 +236,17 @@ def main():
                 
 
             if st.button(":red[Clear chat]"):
-                clear_chat = st.selectbox("Are you sure you want to clear your chat history?", ("No", "Yes"))
-                if clear_chat == "Yes":
-                    st.write("Yes")
-                    st.session_state.clear()
-                    
-                    st.success("Chat history cleared!", icon="🚨")
-                    # st.stop()
-                    # st.experimental_rerun()
-                else:
-                    pass
-                    # st.stop()
+                st.session_state.clear()
+                st.success("Chat history cleared!", icon="🚨")
+                st.stop()
+                # st.experimental_rerun()
             
             # Display the chat history, answer stays above
             for i in range(len(st.session_state.question)):
                 message(st.session_state["answer"][i], is_user=False, key=f"answer_{i}")
                 message(st.session_state["question"][i], is_user=True, key=f"question_{i}")
             # st.text_ area("Chatbot:", value=response, height=100, max_chars=None, key=f"chatbot_response_{counter}")
+            # st.experimental_rerun()
             
 
         else:
