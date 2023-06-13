@@ -15,22 +15,6 @@
                 "Hey there, welcome to the XYZ chatbot! How can I be of service?"]
 },
 {
-    "tag": "goodbye",
-    "patterns": ["Bye",
-                "See you later",
-                "Goodbye",
-                "Take care",
-                "Goodbyeeeeee",
-                "See you later",
-                "Take care"],
-    "responses": ["Goodbye",
-                "See you later",
-                "Take care",
-                "Goodbye! Have a great day!",
-                "See you later! Take care.",
-                "Take care! Have a wonderful day!"]
-},
-{
     "tag": "thanks",
     "patterns": ["Thank you",
                 "Thanks",
@@ -282,5 +266,21 @@
         "I apologize for any inconvenience caused. Could you please provide more details about your complaint? This will help us better understand the issue and assist you accordingly. In the meantime, here are two phone numbers you can call for further assistance: +234 232-232-2323 and +234 323-232-3232.",
         "I'm sorry that you're facing an issue. To help resolve the matter, please provide additional information about your complaint. We will ensure it reaches the appropriate department. Additionally, here are two phone numbers you can contact for immediate support: +234 232-232-2323 and +234 323-232-3232."
       ]
+    },
+    {
+        "tag": "goodbye",
+        "patterns": ["Bye",
+                    "See you later",
+                    "Goodbye",
+                    "Take care",
+                    "Goodbyeeeeee",
+                    "See you later",
+                    "Take care"],
+        "responses": ["Goodbye",
+                    "See you later",
+                    "Take care",
+                    "Goodbye! Have a great day!",
+                    "See you later! Take care.",
+                    "Take care! Have a wonderful day!"]
     }
 ]
