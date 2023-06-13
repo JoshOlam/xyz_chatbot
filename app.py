@@ -13,7 +13,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
-# nltk.download('punkt')
+nltk.download('punkt')
 
 
 # ---- PAGE CONFIGURATION ---- #
@@ -228,8 +228,8 @@ def main():
             st.session_state.tag.insert(0, tag)
             st.session_state.question.insert(0, user_input)
             st.session_state.answer.insert(0, response[0])
-            # message
 
+            # If the tag of the question is predicted as delivery_delay
             if tag == "delivery_delay":
                 order_dict = {}
                 order_num = st.text_input("Kindly input your order number here")
@@ -250,6 +250,8 @@ def main():
                         st.stop()
                     else:
                         st.stop()
+            
+            # If the tag of the question is predicted as complaint
             if tag == "complaint":
                 complaint = st.text_input("Type your complaint here:")
                 if st.button("Submit") or complaint:
@@ -262,16 +264,14 @@ def main():
                     else:
                         st.stop()
 
-            
-            # st.write(response[0])
+            # If the tag of the question is predicted as goodbye   
             if "goodbye" in response:
-                # st.write(response[0])
-                # st.session_state.answer.insert(0, response[0])
-                # st.write(st.session_state)
+                
                 # Retrieve the data from streamlit.session_state
                 chat_history = convert_session_state_to_dict(st.session_state)
                 
-                
+                # Call the end of discussion prompt
+                end_of_discussion()
                 
                 # clear the chat and save it as a json file before stopping
                     
@@ -285,24 +285,20 @@ def main():
                 # Save the conversation history to file
                 path = os.path.join(CHAT_HISTORY_PATH, f"chat_history-{timestamp}.json")
                 with open(path, "w") as chat_file:
-                    # chat_file.write(json.dump(chat_history, indent=4))
                     json.dump(chat_history, chat_file, indent=4)
 
                 st.stop()
                 
-
+            # Add a clear chat button for clearing the chat history
             if st.button(":red[Clear chat]"):
                 st.session_state.clear()
                 st.success("Chat history cleared!", icon="🚨")
                 st.stop()
-                # st.experimental_rerun()
                 
             # Display the chat history, answer stays above
             for i in range(len(st.session_state.question)):
                 message(st.session_state["answer"][i], is_user=False, key=f"answer_{i}")
                 message(st.session_state["question"][i], is_user=True, key=f"question_{i}")
-            # st.text_ area("Chatbot:", value=response, height=100, max_chars=None, key=f"chatbot_response_{counter}")
-            # st.experimental_rerun()
             
 
         else:
