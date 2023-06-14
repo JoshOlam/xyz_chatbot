@@ -100,7 +100,7 @@ To reproduce this project locally, simply open a Command Line Interface (CLI) an
 
 ```bash
 # Clone the project from GitHub
-git clone https://github.com/josholam/xyz-chatbot.git
+git clone https://github.com/josholam/xyz_chatbot.git
 
 # Change into the project's directory
 cd xyz-chatbot
