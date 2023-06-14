@@ -142,7 +142,7 @@ patterns = []
 for intent in intents:
     for pattern in intent['patterns']:
         tags.append(intent['tag'])
-        patterns.append(pattern)
+        patterns.append(pattern.lower())
 
 # training the model
 x = vectorizer.fit_transform(patterns)
@@ -177,7 +177,6 @@ counter = 0
 
 def main():
     # hide_streamlit_header_footer()
-    configure_theme()
     global counter
     st.title("Chatbot")
     st.write("Welcome to the chatbot. Please type a message and click the `Send` button to start the conversation.")
@@ -220,6 +219,8 @@ def main():
 
     if st.button("`Send`", help="Click here to send") or user_input:
         if user_input:
+
+            user_input = user_input.lower()
             # get_best_response(user_input)
             # Get the predicted response for the user
             response = chatbot(user_input)
@@ -253,7 +254,7 @@ def main():
                     end_of_discussion()
                     if st.checkbox("Continue chatting"):
                         st.session_state.clear()
-                        st.experimental_rerun()
+                        # st.experimental_rerun()
                         st.stop()
                     else:
                         clear_chat_history()
@@ -267,10 +268,11 @@ def main():
                     end_of_discussion()
                     if st.checkbox("Continue chatting"):
                         st.session_state.clear()
-                        st.experimental_rerun()
+                        # st.experimental_rerun()
                         st.stop()
                     else:
                         st.stop()
+                    clear_chat_history()
 
             # If the tag of the question is predicted as goodbye   
             if "goodbye" in response:
