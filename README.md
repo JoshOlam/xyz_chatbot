@@ -3,16 +3,13 @@
 ## Table of Content
 1. [Technical Report](#technical-report)
 
-* [Introduction](#introduction)
-
-
 2. [Setting Up The Project](#setting-up-the-project)
 
-3. [Project Deliverable and Walkthrough](#project-deliverable-and-walkthrough)
+3. [Project Deliverable](#project-deliverable-and-walkthrough)
 
 4. [Future Work](#future-work)
 
-## Demo
+## Project Walkthrough
 
 https://github.com/JoshOlam/xyz-chatbot/assets/90909849/41532f76-2695-4cb5-aca1-39f6b879c3ca
 
