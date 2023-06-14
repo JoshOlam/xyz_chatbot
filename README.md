@@ -1,5 +1,17 @@
 # XYZ Chatbot Project Report
 
+## Table of Content
+1. [Technical Report](#technical-report)
+
+* [Introduction](#introduction)
+
+
+2. [Setting Up The Project](#setting-up-the-project)
+
+3. [Project Deliverable and Walkthrough](#project-deliverable-and-walkthrough)
+
+4. [Future Work](#future-work)
+
 ## Technical Report
 
 #### Introduction
@@ -79,16 +91,6 @@ Addressing these challenges required a combination of domain knowledge, expertis
 
 - Also, some dummy details were used, such as contact numbers, addresses, emails etc.
 
-### Future Work
-
-- Implement a spell checker: Before feeding user input to the model, apply a spell checker to correct commonly misspelled words. This helps improve the accuracy of the chatbot's understanding and response generation.
-
-- Cache chat session state: Since Streamlit web app was used in developing the User Interface (UI) of this project, implementing a caching mechanism for the chat session state will be necessary. This avoids unnecessary reruns of the chatbot after each interaction, unless triggered by a specific button or action.
-
-- Clear the textbox: After a user enters text and clicks the send button, clear the textbox to provide a clean interface for the next interaction. This ensures that previous user input is not retained, and users can easily input new queries.
-
-- Move the location of the chat entry point to the bottom of the page, and ensure the app auto scrolls as responses ar generated. This will greatly improve the users' experience (UX) of the app.
-
 ### Conclusion
 The development of the XYZ chatbot project aims to provide an effective solution for customer support and engagement on the XYZ website. The chatbot's NLP capabilities enable it to understand and respond to user queries, trigger relevant services, provide information, and collect and store user data. By implementing the functionalities described in this report, the chatbot enhances the overall customer experience and satisfaction on the XYZ website.
 
@@ -118,9 +120,23 @@ streamlit run app.py
 # A new window will pop open in your default browser, where you can interact with the chatbot.
 ```
 
-## Deliverable
+## Project Deliverable and Walkthrough
 
-https://github.com/JoshOlam/xyz-chatbot/blob/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4
+https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4
 
 
 The deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
+
+
+## Future Work
+
+- Implement a spell checker: Before feeding user input to the model, apply a spell checker to correct commonly misspelled words. This helps improve the accuracy of the chatbot's understanding and response generation.
+
+- Cache chat session state: Since Streamlit web app was used in developing the User Interface (UI) of this project, implementing a caching mechanism for the chat session state will be necessary. This avoids unnecessary reruns of the chatbot after each interaction, unless triggered by a specific button or action.
+
+- Clear the textbox: After a user enters text and clicks the send button, clear the textbox to provide a clean interface for the next interaction. This ensures that previous user input is not retained, and users can easily input new queries.
+
+- Move the location of the chat entry point to the bottom of the page, and ensure the app auto scrolls as responses ar generated. This will greatly improve the users' experience (UX) of the app.
+
+- Instead of having to store all the assets and outputs for the project on the local storage of the app, a cloud storage platform could be introduced to house these resources.
+
