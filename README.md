@@ -12,6 +12,19 @@
 
 4. [Future Work](#future-work)
 
+## Demo
+
+
+
+
+
+https://github.com/lawalsegun2025/whatsapp_chat_analyzer/assets/94943377/b5850e9a-667b-4527-b454-a05bb57ef950
+
+
+
+
+
+
 ## Technical Report
 
 #### Introduction
@@ -121,6 +134,10 @@ streamlit run app.py
 ```
 
 ## Project Deliverable and Walkthrough
+
+[![Video Demo](Project Walkthrough 🚶‍♂️ - Watch Video
+)](https://www.loom.com/embed/f8a5dfc3d5e545abacd636c2c8670c8f?sid=4cf773b7-8e33-478f-bbe2-e439a00799ae)
+
 
 ![Loom Video](https://www.loom.com/share/f8a5dfc3d5e545abacd636c2c8670c8f?sid=d1309ba3-887b-414f-a8b6-4ef0ff2b7a49)
 
