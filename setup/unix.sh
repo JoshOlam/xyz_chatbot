@@ -5,4 +5,4 @@ python3 -m venv xyz_env
 source xyz_env/bin/activate
 
 #Install the dependencies
-pip install -r setup/requirements.txt
+pip install -r requirements.txt
