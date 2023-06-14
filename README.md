@@ -5,7 +5,7 @@
 
 2. [Setting Up The Project](#setting-up-the-project)
 
-3. [Project Deliverable](#project-deliverable-and-walkthrough)
+3. [Project Deliverable](#project-deliverable)
 
 4. [Future Work](#future-work)
 
@@ -121,16 +121,7 @@ streamlit run app.py
 # A new window will pop open in your default browser, where you can interact with the chatbot.
 ```
 
-## Project Deliverable and Walkthrough
-
-[![Video Demo](Project Walkthrough 🚶‍♂️ - Watch Video
-)](https://www.loom.com/embed/f8a5dfc3d5e545abacd636c2c8670c8f?sid=4cf773b7-8e33-478f-bbe2-e439a00799ae)
-
-
-![Loom Video](https://www.loom.com/share/f8a5dfc3d5e545abacd636c2c8670c8f?sid=d1309ba3-887b-414f-a8b6-4ef0ff2b7a49)
-
-![Project Walk Through](https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4)
-
+## Project Deliverable
 
 The deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
 
