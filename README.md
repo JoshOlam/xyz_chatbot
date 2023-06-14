@@ -122,7 +122,7 @@ streamlit run app.py
 
 ## Project Deliverable and Walkthrough
 
-https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4
+![Project Walk Through](https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4)
 
 
 The deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
