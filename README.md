@@ -11,7 +11,11 @@
 
 ## Project Walkthrough
 
-https://github.com/JoshOlam/xyz-chatbot/assets/90909849/41532f76-2695-4cb5-aca1-39f6b879c3ca
+
+
+https://github.com/JoshOlam/xyz_chatbot/assets/90909849/901ebaca-798e-45c5-92c4-c7fc974f553b
+
+
 
 ## Technical Report
 
