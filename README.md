@@ -14,16 +14,7 @@
 
 ## Demo
 
-
-
-
-
-https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4
-
-
-
-
-
+https://github.com/JoshOlam/xyz-chatbot/assets/90909849/41532f76-2695-4cb5-aca1-39f6b879c3ca
 
 ## Technical Report
 
@@ -158,4 +149,3 @@ The deployed web app for the chatbot can be accessed [here](https://josholam-xyz
 - Move the location of the chat entry point to the bottom of the page, and ensure the app auto scrolls as responses ar generated. This will greatly improve the users' experience (UX) of the app.
 
 - Instead of having to store all the assets and outputs for the project on the local storage of the app, a cloud storage platform could be introduced to house these resources.
-
