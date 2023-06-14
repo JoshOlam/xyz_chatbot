@@ -16,10 +16,10 @@ https://github.com/JoshOlam/xyz-chatbot/assets/90909849/41532f76-2695-4cb5-aca1-
 ## Technical Report
 
 #### Introduction
-This report presents the development of an NLP-powered chatbot for XYZ, a fictional company. The objective of this project is to create a chatbot that can effectively handle customer queries and provide appropriate responses in real time on the XYZ website (www.xyz.com). The chatbot aims to enhance customer support and engagement by providing prompt and accurate assistance to users. This report provides an overview of the project, its functionalities, sample queries and responses, data storage considerations, implementation details, and a disclaimer about the fictional nature of XYZ.
+This report presents the development of an NLP-powered chatbot for XYZ, a fictional company, as a coding assessment. The objective of this project is to create a chatbot that can effectively handle customer queries and provide appropriate responses in real time on the XYZ website (www.xyz.com). The chatbot aims to enhance customer support and engagement by providing prompt and accurate assistance to users. This report provides an overview of the project, its functionalities, sample queries and responses, data storage considerations, implementation details, and a disclaimer about the fictional nature of XYZ.
 
 ### Project Overview
-The XYZ chatbot project involves building an NLP model that understands and responds to customer requests in text format. The chatbot is designed to provide various services, including addressing technical issues, guiding customers through the return process, handling complaints, providing company information, and facilitating contact with customer service agents. Additionally, the chatbot prompts users to create an account or sign up for the XYZ mailing list, further enhancing customer engagement.
+The XYZ chatbot project involves building an NLP model that understands and responds to customer requests in text format. The chatbot is designed to provide various services, including addressing technical issues, guiding customers through the return process, handling complaints, providing company information, and facilitating contact with customer service agents. Additionally, the chatbot prompts users to create an account or sign up for the XYZ mailing list, which will further enhance customer engagement.
 
 ### Functionalities
 The chatbot has been developed with the following key functionalities:
@@ -56,19 +56,16 @@ The chatbot demonstrates its capabilities through the following sample queries a
    - Response: The chatbot asks about the nature of the complaint and prompts users to provide more details. It then triggers the agent service, offering two phone numbers for contacting customer support.
 
 ### Data Storage
-All data collected from users, including order numbers, complaints, and email addresses, is stored in a structured format, preferably JSON. This ensures accessibility and enables further analysis and processing of the collected information.
-
-### Implementation
-The chatbot can be implemented as either a simple Python application for local testing or as a web application hosted on the cloud. The implementation choice depends on the preferred environment and requirements.
+All data collected from users, including order numbers, complaints, and email addresses, is stored in a format JSON, except for the email that is stored as a text (.txt) file. The collected data have timestamps to the file names, which ensures accessibility and enables further analysis and processing of the collected information.
 
 ### Disclaimer
 It is essential to note that XYZ is a fictional company created solely for the purpose of this project evaluation. The information provided about XYZ is entirely fictitious and does not represent any real company.
 
 ### Training Data Source
-As typical to every machine learning project, the volume and quality of the data availble will directly impact the performance of the project. Hence, in generating the training data, [OpenAI's ChatGPT](https://chat.openai.com/share/45e13531-10f7-49e6-b39b-0cf16504cdf3) was used to generate (over 1k) simulated question patterns and responses.
+As typical to every machine learning project, the **volume** and **quality** of the data availble will directly impact the performance of the project. Hence, in generating the training data, [OpenAI's ChatGPT](https://chat.openai.com/share/45e13531-10f7-49e6-b39b-0cf16504cdf3) was used to generate (over 1k) simulated question patterns and responses.
 
 ### Development Environment
-This project was developed in an Ubuntu environment, using Python programming language.
+This project was developed in an Ubuntu environment, using Python programming language. Streamlit webhosting was used for the production environment, with the program hosted in a GitHub repository.
 
 ### Challenges Faced
 
@@ -82,22 +79,24 @@ During the execution of the project, several challenges were encountered. These 
 
 4. **Testing and Validation**: Ensuring the chatbot's accuracy, responsiveness, and appropriate behavior across a wide range of user queries and scenarios posed a significant challenge. Rigorous testing and validation processes were necessary to identify and address any inconsistencies, errors, or limitations in the chatbot's performance.
 
-6. **Integration and Deployment**: Integrating the chatbot and deploying it in a production environment required careful coordination.
+6. **Integration and Deployment**: Integrating the chatbot and deploying it in a production environment required careful coordination and consideration.
 
 Addressing these challenges required a combination of domain knowledge, expertise in natural language processing, and rigorous testing.
 
 ### Project's Limitation
 
-- Since this is just a simulated project, the actual services and agents that it need to trigger were not setup, but provision was made for adapting them into the app if they were available.
+- Since this is just a fictitious, simulated project, the actual services and agents that it need to trigger were not setup, but provision was made for adapting them into the app if they were available.
 
 - Also, some dummy details were used, such as contact numbers, addresses, emails etc.
 
 ### Conclusion
-The development of the XYZ chatbot project aims to provide an effective solution for customer support and engagement on the XYZ website. The chatbot's NLP capabilities enable it to understand and respond to user queries, trigger relevant services, provide information, and collect and store user data. By implementing the functionalities described in this report, the chatbot enhances the overall customer experience and satisfaction on the XYZ website.
+The development of the XYZ chatbot project aims to provide an effective solution for customer support and engagement on the XYZ website. The chatbot's NLP capabilities enable it to understand and respond to user queries, trigger relevant services, provide information, and collect and store user data. By implementing the functionalities described in this report, the chatbot enhances the overall customer experience and satisfaction on the fictitious XYZ website.
 
 ## Setting Up the Project
 
 ### For unix os (such as Linux, Ubuntu, Mac etc)
+
+To reproduce this project locally, simply open a Command Line Interface (CLI) and copy the command block below (using the copy icon that would be displayed at the top right, when you hover over the command block) into the CLI.
 
 ```bash
 # Clone the project from GitHub
@@ -121,9 +120,23 @@ streamlit run app.py
 # A new window will pop open in your default browser, where you can interact with the chatbot.
 ```
 
+### For Windows os
+Preferably setup a WSL. Otherwise, copy the same command block above and change the `source` keyword to suit to your chosen CLI.
+```bash
+# Activate the virtual environment
+<command> xyz_env/bin/activate
+```
+
+Usually, you could simply try running the `activate` script directly as below:
+
+```bash
+# Activate the virtual environment
+xyz_env/bin/activate
+```
+
 ## Project Deliverable
 
-The deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
+As part of the deliverable for the project, the deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
 
 
 ## Future Work
