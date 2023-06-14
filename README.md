@@ -122,6 +122,8 @@ streamlit run app.py
 
 ## Project Deliverable and Walkthrough
 
+![Loom Video](https://www.loom.com/share/f8a5dfc3d5e545abacd636c2c8670c8f?sid=d1309ba3-887b-414f-a8b6-4ef0ff2b7a49)
+
 ![Project Walk Through](https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4)
 
 
