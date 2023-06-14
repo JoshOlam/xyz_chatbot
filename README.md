@@ -18,7 +18,7 @@
 
 
 
-https://github.com/lawalsegun2025/whatsapp_chat_analyzer/assets/94943377/b5850e9a-667b-4527-b454-a05bb57ef950
+https://raw.githubusercontent.com/JoshOlam/xyz-chatbot/85ef5eddb0f2359944a8c01483bf7681079b837c/assets/video/XYZ%20chatbot%20Project%20Walkthrough.mp4
 
 
 
