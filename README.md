@@ -140,7 +140,7 @@ xyz_env/bin/activate
 
 ## Project Deliverable
 
-As part of the deliverable for the project, the deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-7fzmdd.streamlit.app/)
+As part of the deliverable for the project, the deployed web app for the chatbot can be accessed [here](https://josholam-xyz-chatbot-app-28w240.streamlit.app/)
 
 
 ## Future Work
